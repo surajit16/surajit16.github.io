@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Surajit Khan | Engineering Manager</title>
+<style>
+:root{--rakuten:#BF0000;--rakuten-dark:#8A0000;--rakuten-light:#FFECEC;--text:#333;--muted:#666;--border:#E5E5E5;--bg:#F7F7F7;--pad-x:20px;--pad-y:24px}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font-family:"Segoe UI",Roboto,Arial,sans-serif;background:var(--bg);color:var(--text);line-height:1.65;font-size:14px;overflow-x:hidden}
+.container{width:100%;max-width:100%;min-height:100vh;margin:0 auto;background:#fff}
+.page{padding:var(--pad-y) var(--pad-x);page-break-after:always}
+.page:last-child{page-break-after:auto}
+@page{size:A4;margin:0}
+h1{font-size:clamp(28px,5vw,40px);font-weight:700;color:#fff}
+h2{font-size:clamp(16px,2.5vw,22px);font-weight:500;margin-top:8px;color:#fff;line-height:1.4}
+h3{font-size:clamp(20px,3vw,24px);color:var(--rakuten);margin-bottom:18px;padding-bottom:8px;border-bottom:3px solid var(--rakuten)}
+h4{font-size:clamp(16px,2vw,18px);margin-bottom:8px;color:var(--rakuten)}
+p{text-align:justify}
+.hero{background:linear-gradient(135deg,var(--rakuten),var(--rakuten-dark));padding:clamp(24px,4vw,45px);color:#fff;margin:calc(var(--pad-y)*-1) calc(var(--pad-x)*-1) 0;width:calc(100% + var(--pad-x)*2)}
+.hero-flex{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:24px}
+.hero-left{flex:1 1 280px;min-width:0}
+.hero-right{flex:0 0 auto;width:160px;display:flex;justify-content:center;align-items:center;margin:0 auto}
+.profile{width:clamp(100px,20vw,140px);height:clamp(100px,20vw,140px);border-radius:50%;background:#fff;display:flex;justify-content:center;align-items:center;font-size:clamp(36px,8vw,54px);font-weight:700;color:var(--rakuten)}
+.tagline{margin-top:14px;font-size:clamp(14px,2vw,16px);opacity:.95}
+.contact{display:flex;flex-wrap:wrap;gap:12px 18px;margin-top:20px;font-size:clamp(12px,1.8vw,14px)}
+.contact a{display:flex;align-items:center;gap:8px;color:#fff;text-decoration:none;word-break:break-word}
+.contact a:hover{text-decoration:underline}
+.icon{width:18px;height:18px;display:inline-flex;align-items:center;justify-content:center;flex-shrink:0}
+.section{margin-top:clamp(24px,4vw,34px)}
+.summary{font-size:clamp(14px,2vw,15px)}
+.metrics{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:14px;margin-top:20px}
+.metric{background:#fff;border-top:4px solid var(--rakuten);border-radius:10px;padding:clamp(14px,2vw,18px);box-shadow:0 2px 10px rgba(0,0,0,.08);text-align:center}
+.metric h5{font-size:clamp(22px,4vw,28px);color:var(--rakuten)}
+.metric span{font-size:13px;color:var(--muted);display:block;margin-top:6px}
+.two-column{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));gap:clamp(16px,3vw,28px)}
+.card{background:#fff;border-radius:10px;padding:clamp(14px,2vw,18px);box-shadow:0 2px 8px rgba(0,0,0,.08);border-left:5px solid var(--rakuten)}
+.card ul{padding-left:18px;margin-top:8px}
+.card li{margin-bottom:8px}
+.small{font-size:13px;color:var(--muted)}
+.co-logo{width:clamp(48px,10vw,60px);height:clamp(48px,10vw,60px);border-radius:12px;object-fit:contain;background:#fff;padding:4px;flex-shrink:0}
+.co-header{display:flex;align-items:center;gap:clamp(12px,2vw,18px);min-width:0;flex:1}
+.co-row{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-start;gap:16px}
+.co-badge{padding:8px 16px;border-radius:25px;font-weight:600;font-size:13px;white-space:nowrap}
+.timeline-wrap{margin:45px 0 65px;overflow-x:auto;-webkit-overflow-scrolling:touch;padding-bottom:8px}
+.timeline-bar{position:relative;height:165px;min-width:640px}
+.timeline-line{position:absolute;top:55px;left:3%;right:3%;height:5px;background:var(--rakuten);border-radius:10px}
+.tl-node{position:absolute;top:0;width:120px;margin-left:-40px;text-align:center}
+.tl-node.em{width:150px;margin-left:-100px;top:0px}
+.tl-node.last{width:140px;margin-left:-140px;left:100%!important}
+.tl-date{font-size:13px;font-weight:600;color:#666}
+.tl-dot{margin:8px auto;width:18px;height:18px;background:var(--rakuten);border-radius:50%;border:4px solid #fff;box-shadow:0 0 0 3px var(--rakuten)}
+.tl-title{margin-top:15px;font-weight:600;font-size:13px;line-height:1.3}
+.tl-title.current{font-weight:700;color:var(--rakuten)}
+.exp-card{margin-top:25px;background:#fff;border-radius:12px;padding:clamp(16px,3vw,25px);box-shadow:0 3px 12px rgba(0,0,0,.08);border-left:6px solid var(--rakuten)}
+.exp-inner{margin-top:25px;padding-left:0}
+@media(min-width:640px){.exp-inner{padding-left:78px}}
+.footer{margin-top:clamp(40px,6vw,60px);padding-top:20px;border-top:2px solid var(--rakuten);text-align:center;color:#666;font-size:13px}
+@media(max-width:639px){
+:root{--pad-x:16px;--pad-y:20px}
+.hero-right{width:100%}
+.co-row>div:last-child{width:100%;display:flex;flex-wrap:wrap;gap:8px}
+.co-badge{white-space:normal;text-align:center}
+}
+@media(min-width:1200px){:root{--pad-x:160px}}
+@media print{
+body{background:#fff;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+.container{width:210mm;max-width:210mm}
+.page{margin:0;padding:18mm}
+.hero{margin:0;width:100%;padding:45px}
+a{text-decoration:none;color:inherit}
+.card,.metric,.exp-card{box-shadow:none;border:1px solid #eee}
+.metrics{grid-template-columns:repeat(3,1fr)}
+.two-column{grid-template-columns:1fr 1fr}
+.timeline-wrap{overflow:visible}
+}
+</style>
+</head>
+<body>
+<div class="container"><div class="page">
+
+<section class="hero"><div class="hero-flex">
+<div class="hero-left">
+<h1>Surajit Khan</h1>
+<h2>Engineering Manager • AI Transformation Leader • Enterprise Platform Architect</h2>
+<div class="tagline">Engineering leader with <strong id="hero-exp">—</strong> of experience driving enterprise software, AI transformation, engineering excellence, organizational strategy, and building high-performing cross-functional engineering organizations.</div>
+<div class="contact">
+<a href="tel:+918147002734"><span class="icon">📞</span>+91 8147002734</a>
+<a href="mailto:surajitkhan.work@gmail.com"><span class="icon">✉️</span>surajitkhan.work@gmail.com</a>
+<a href="http://www.surajitkhan.in" target="_blank"><span class="icon">🌐</span>www.surajitkhan.in</a>
+<a href="https://linkedin.com/in/khansurajit" target="_blank"><span class="icon">💼</span>linkedin.com/in/khansurajit</a>
+<a><span class="icon">📍</span>Bangalore, Karnataka, India</a>
+</div></div>
+<div class="hero-right"><div class="profile">SK</div></div>
+</div></section>
+
+<section class="section"><h3>Executive Summary</h3>
+<p class="summary">Engineering Manager with over <strong id="summary-exp">—</strong> of experience leading enterprise engineering organizations, delivering strategic digital transformation initiatives, and building AI-powered enterprise platforms. Currently leading a multidisciplinary team of approximately <strong>15 professionals</strong> including Software Engineers, QA Engineers, Product Managers, Project Managers and AI Engineers. Experienced in engineering strategy, people leadership, organizational transformation, SDLC modernization, AI-assisted engineering, DevOps, platform engineering, cloud technologies, engineering standardization, operational excellence and enterprise architecture. Proven ability to translate business strategy into engineering execution, mentor future technical leaders, improve engineering productivity, and deliver scalable enterprise platforms with measurable business impact.</p>
+</section>
+
+<section class="section"><h3>Leadership Dashboard</h3>
+<div class="metrics">
+<div class="metric"><h5 id="metric-exp">—</h5><span>Years Experience</span></div>
+<div class="metric"><h5>15</h5><span>Cross-functional Team Members</span></div>
+<div class="metric"><h5>25%</h5><span>Engineering Productivity Improvement</span></div>
+<div class="metric"><h5>4+</h5><span>Enterprise Platforms Delivered</span></div>
+<div class="metric"><h5>3+</h5><span>Years Conference Committee</span></div>
+<div class="metric"><h5>AI</h5><span>Transformation Leader</span></div>
+</div></section>
+
+<section class="section"><h3>Leadership & Executive Competencies</h3>
+<div class="two-column">
+<div class="card"><h4>People Leadership</h4><ul>
+<li>Lead multidisciplinary engineering teams comprising Software Engineers, QA Engineers, Product Managers, Project Managers and AI Engineers.</li>
+<li>Create high-performance engineering culture through coaching, mentoring and continuous feedback.</li>
+<li>Performance management, career development and succession planning.</li>
+<li>Hiring, interviewing and onboarding engineering talent.</li>
+<li>Technical leadership development and mentoring future Engineering Leaders.</li>
+<li>Cross-team collaboration and conflict resolution.</li>
+<li>Ownership driven engineering culture.</li>
+</ul></div>
+<div class="card"><h4>Organizational Leadership</h4><ul>
+<li>Engineering Strategy & Technology Vision.</li><li>Quarterly Planning and Roadmap Execution.</li><li>Portfolio & Program Management.</li><li>Executive Stakeholder Management.</li><li>Resource Planning & Capacity Management.</li><li>Budget Planning & Cost Optimization.</li><li>Business Alignment & Technology Governance.</li>
+</ul></div>
+<div class="card"><h4>Engineering Excellence</h4><ul>
+<li>Enterprise Architecture & Scalable Platform Design.</li><li>Microservices & Event-Driven Architecture.</li><li>Engineering Standardization Practices.</li><li>Secure SDLC & DevSecOps.</li><li>CI/CD Automation & Release Governance.</li><li>Observability, Monitoring & Reliability Engineering.</li><li>Engineering Metrics & Continuous Improvement.</li>
+</ul></div>
+<div class="card"><h4>AI & Digital Transformation</h4><ul>
+<li>Enterprise AI Strategy & AI Transformation.</li><li>AI-assisted SDLC & Developer Productivity.</li><li>AI Agents & Workflow Automation.</li><li>Synthetic Data Generation.</li><li>Translation Quality Estimation.</li><li>LLM Adoption & Prompt Engineering.</li><li>Enterprise AI Governance.</li>
+</ul></div>
+</div></section>
+
+<section class="section"><h3>Technology Leadership</h3>
+<div class="two-column">
+<div class="card"><h4>Programming Languages</h4><p>Java • Python • Go • Ruby • SQL</p>
+<h4 style="margin-top:20px">Frameworks</h4><p>Spring Boot • FastAPI • React • Hibernate • REST APIs • GraphQL</p>
+<h4 style="margin-top:20px">Architecture</h4><p>Microservices • Distributed Systems • Event-Driven Architecture • System Design • REST • Enterprise Integration</p></div>
+<div class="card"><h4>Data & Analytics</h4><p>MySQL • PostgreSQL • Oracle • Redis • MongoDB • Hadoop • Hive • Kafka</p>
+<h4 style="margin-top:20px">Cloud & DevOps</h4><p>AWS • GCP • Private Cloud • Docker • Kubernetes • Jenkins • GitHub • GitLab • CI/CD</p>
+<h4 style="margin-top:20px">Engineering Practices</h4><p>Agile • Scrum • DevOps • DevSecOps • Platform Engineering • SDLC Modernization • Standardization Practices • Observability • Engineering Governance</p></div>
+</div></section>
+
+<section class="section"><h3>Leadership Impact</h3>
+<div class="card"><ul>
+<li>Lead a <strong>15-member cross-functional engineering organization</strong> comprising Software Engineers, QA Engineers, Product Managers, Project Managers and AI Engineers delivering enterprise-scale digital platforms.</li>
+<li>Drive engineering strategy from ideation through architecture, planning, execution, production deployment and operational excellence.</li>
+<li>Partner with executive leadership, business stakeholders, architecture teams and operations organizations to align engineering investments with business priorities.</li>
+<li>Championed AI adoption across engineering workflows by integrating AI-assisted development, synthetic data generation, intelligent automation and AI-powered operational analytics.</li>
+<li>Improved engineering productivity by <strong>25%</strong> through engineering standardization, SDLC modernization, automation and process optimization.</li>
+<li>Build engineering culture focused on ownership, accountability, innovation, quality and continuous learning while mentoring future technical leaders.</li>
+</ul></div></section>
+
+<section class="section"><h3>Career Progression</h3>
+<div class="timeline-wrap"><div class="timeline-bar" id="timeline"><div class="timeline-line"></div></div></div>
+</section>
+
+<section class="section"><h3>Professional Experience</h3>
+<div class="exp-card" id="rakuten-summary"></div>
+</section>
+
+<section class="section"><h3>Engineering Leadership at Rakuten Group</h3>
+<div class="card" style="margin-bottom:28px"><div class="co-row"><div><h4>Engineering Manager</h4><div class="small" id="em-dates">Jan 2026 – Present</div></div><div class="co-badge" style="background:var(--rakuten);color:#fff">Current Role</div></div>
+<h4 style="margin-top:25px">Leadership</h4><ul>
+<li>Lead a <strong>15-member multidisciplinary engineering organization</strong> consisting of Software Engineers, QA Engineers, Product Managers, Project Managers and AI Engineers.</li>
+<li>Own engineering vision, execution strategy and technology roadmap across multiple enterprise platforms.</li>
+<li>Translate business objectives into scalable engineering initiatives aligned with organizational strategy.</li>
+<li>Drive quarterly planning, roadmap prioritization, engineering governance and delivery excellence.</li>
+<li>Partner with senior leadership, architects, product organizations and business stakeholders to define strategic investments.</li>
+</ul>
+<h4 style="margin-top:18px">People Leadership</h4><ul>
+<li>Mentor Technical Leads and Senior Engineers into future engineering leaders.</li><li>Conduct performance reviews, promotion discussions and career development planning.</li><li>Lead hiring strategy, technical interviews and onboarding.</li><li>Build an engineering culture centered on ownership, accountability and continuous improvement.</li>
+</ul>
+<h4 style="margin-top:18px">Engineering Excellence</h4><ul>
+<li>Champion engineering standardization practices across SDLC, architecture, code quality and operational governance.</li><li>Strengthen DevOps culture through CI/CD automation, release governance and observability.</li><li>Drive platform reliability, scalability and operational excellence.</li><li>Establish engineering metrics and continuous improvement initiatives.</li>
+</ul>
+<h4 style="margin-top:18px">AI Transformation</h4><ul>
+<li>Lead AI adoption across enterprise engineering workflows.</li><li>Promote AI-assisted SDLC, AI Agents and intelligent engineering automation.</li><li>Expand enterprise AI capabilities through Synthetic Data Generation, AI Observability and intelligent operational analytics.</li>
+</ul></div>
+
+<div class="card" style="margin-bottom:28px"><h4>Associate Engineering Manager</h4><div class="small">Jun 2023 – Dec 2025</div>
+<h4 style="margin-top:22px">Leadership Responsibilities</h4><ul>
+<li>Managed a high-performing engineering team comprising Software Engineers and QA professionals.</li><li>Led sprint planning, quarterly planning, release management and engineering execution.</li><li>Partnered with Product Managers, Architects and Business stakeholders to execute strategic initiatives.</li><li>Managed engineering capacity planning, prioritization and resource allocation.</li><li>Mentored engineers through structured career development and technical coaching.</li>
+</ul>
+<h4 style="margin-top:18px">Business Impact</h4><ul>
+<li>Improved engineering productivity by <strong>25%</strong> through engineering standardization and process optimization.</li><li>Reduced operational effort through enterprise automation initiatives.</li><li>Established engineering best practices improving delivery quality and predictability.</li><li>Strengthened cross-functional collaboration across Engineering, Product and Operations.</li>
+</ul></div>
+
+<div class="card" style="margin-bottom:28px"><h4>Senior Team Lead</h4><div class="small">Apr 2023 – Jul 2023</div><ul>
+<li>Coordinated engineering execution across multiple enterprise initiatives.</li><li>Guided architecture discussions and technical decision making.</li><li>Supported engineering managers with roadmap execution.</li><li>Mentored engineers and technical leads.</li>
+</ul></div>
+
+<div class="card" style="margin-bottom:28px"><h4>Technical Lead</h4><div class="small">Jan 2020 – Apr 2023</div><ul>
+<li>Architected scalable enterprise platforms using Java, Spring Boot and distributed microservices.</li><li>Led engineering design reviews, code quality initiatives and platform modernization.</li><li>Introduced AI-driven capabilities into enterprise products.</li><li>Designed enterprise integrations using Kafka, Hadoop and cloud technologies.</li><li>Mentored engineering teams across backend development, cloud platforms and AI technologies.</li>
+</ul></div>
+
+<div class="card"><h4>Senior Engineer I & Senior Engineer II</h4><div class="small">Jun 2018 – Dec 2019</div><ul>
+<li>Developed enterprise backend platforms using Java, Spring Boot, MySQL and distributed architecture.</li><li>Designed scalable REST APIs and enterprise integration services.</li><li>Improved platform performance, reliability and maintainability.</li><li>Collaborated closely with Product, QA and Operations teams to deliver enterprise solutions.</li>
+</ul></div>
+</section>
+
+<section class="section"><h3>Previous Professional Experience</h3>
+<div id="prev-companies"></div>
+</section>
+
+<section class="section"><h3>Career Highlights</h3>
+<div class="two-column">
+<div class="card"><h4>Engineering Leadership</h4><ul>
+<li><span id="highlights-exp">—</span> of software engineering and leadership experience.</li>
+<li>Progressed from Software Engineer to Engineering Manager through six promotions.</li>
+<li>Leading a multidisciplinary engineering organization of 15 professionals.</li>
+<li>Mentoring engineers, technical leads and future engineering managers.</li>
+<li>Driving organizational engineering excellence and delivery governance.</li>
+</ul></div>
+<div class="card"><h4>Business Impact</h4><ul>
+<li>Improved engineering productivity by 25%.</li><li>Delivered multiple enterprise digital transformation platforms.</li><li>Introduced AI-powered engineering initiatives across enterprise products.</li><li>Led engineering standardization initiatives improving delivery quality.</li><li>Successfully executed cross-functional strategic programs.</li>
+</ul></div>
+</div></section>
+
+<section class="section"><h3>Strategic Enterprise Initiatives</h3>
+<p class="small" style="margin-bottom:25px">Led planning, architecture, execution and engineering governance for enterprise platforms supporting AI transformation, operational excellence and digital modernization across Rakuten.</p>
+<div class="card" style="margin-bottom:25px"><h4>License Management Platform</h4><div class="small">Enterprise Platform • AI Powered • Internal Product</div>
+<p style="margin-top:15px">Designed and led the development of an enterprise software license management platform that centralized license governance across business units while optimizing software utilization and compliance.</p>
+<h4 style="margin-top:20px">Leadership & Business Impact</h4><ul><li>Defined product vision, engineering roadmap and architecture.</li><li>Partnered with stakeholders to standardize enterprise software governance.</li><li>Improved software utilization through AI-assisted recommendations.</li><li>Reduced manual operational effort using workflow automation.</li><li>Built scalable microservices supporting enterprise growth.</li></ul>
+<strong>Technology</strong><p class="small">Java • Spring Boot • Python • Hadoop • MySQL • AI/ML • Private Cloud</p></div>
+<div class="card" style="margin-bottom:25px"><h4>Digital Employee Management Platform</h4><div class="small">Enterprise Automation Platform</div>
+<p style="margin-top:15px">Enterprise platform integrating employee onboarding, offboarding, access provisioning, software licenses, organizational workflows and operational processes.</p>
+<h4 style="margin-top:20px">Business Outcomes</h4><ul><li>Automated enterprise employee lifecycle.</li><li>Reduced manual operational activities.</li><li>Centralized multiple business workflows.</li><li>Improved operational visibility.</li><li>Supported organization-wide digital transformation initiatives.</li></ul>
+<strong>Technology</strong><p class="small">Java • Python • React • MySQL • REST APIs • Private Cloud</p></div>
+<div class="card" style="margin-bottom:25px"><h4>Synthetic Data Generator</h4><div class="small">Artificial Intelligence Platform</div>
+<p style="margin-top:15px">Designed architecture for an enterprise AI platform capable of generating realistic synthetic datasets to accelerate software testing, AI model validation and privacy-preserving development.</p>
+<h4 style="margin-top:20px">AI Transformation</h4><ul><li>Enabled secure testing without exposing production data.</li><li>Improved AI model validation.</li><li>Accelerated engineering productivity.</li><li>Promoted responsible AI adoption.</li><li>Reduced dependency on sensitive production datasets.</li></ul>
+<strong>Technology</strong><p class="small">GAN • FastAPI • Python • Streamlit • AI/ML • Private Cloud</p></div>
+<div class="card"><h4>Standardized Operations Analytics</h4><div class="small">Enterprise Observability Platform</div>
+<p style="margin-top:15px">Enterprise analytics platform centralizing operational logs, metrics and engineering insights to improve reliability, incident response and operational decision making.</p>
+<h4 style="margin-top:20px">Engineering Excellence</h4><ul><li>Centralized enterprise operational analytics.</li><li>Introduced AI-assisted observability.</li><li>Improved incident detection.</li><li>Enhanced platform reliability.</li><li>Strengthened engineering operations.</li></ul>
+<strong>Technology</strong><p class="small">Kafka • Hadoop • Java • React • AI Analytics • Private Cloud</p></div>
+</section>
+
+<section class="section"><h3>AI Leadership & Engineering Transformation</h3>
+<div class="card"><ul>
+<li>Driving AI transformation initiatives across enterprise engineering organizations.</li><li>Leading adoption of AI-assisted Software Development Lifecycle (SDLC).</li><li>Building engineering capabilities around AI Agents, intelligent automation and enterprise AI.</li><li>Driving engineering productivity through Generative AI and developer tooling.</li><li>Promoting engineering standardization, reusable platform components and automation-first culture.</li><li>Leveraging AI for observability, software governance and enterprise operational excellence.</li><li>Aligning AI investments with long-term business strategy and engineering roadmaps.</li>
+</ul></div></section>
+
+<section class="section"><h3>Education</h3>
+<div class="card"><h4>Master of Science (Artificial Intelligence & Machine Learning)</h4><div class="small">Liverpool John Moores University • 2023</div></div>
+<div class="card" style="margin-top:18px"><h4>Post Graduate Diploma (Artificial Intelligence & Machine Learning)</h4><div class="small">International Institute of Information Technology Bangalore • 2022</div></div>
+<div class="card" style="margin-top:18px"><h4>Bachelor of Technology (Information Technology)</h4><div class="small">Calcutta Institute of Engineering & Management • 2011</div></div>
+</section>
+
+<section class="section"><h3>Professional Certifications</h3>
+<div class="card"><ul><li>TOGAF® 10 Trained</li><li>Rakuten Certified Interviewer</li><li>21st Century Japanese Management — Indian Institute of Management Bangalore</li></ul></div></section>
+
+<section class="section"><h3>Community Leadership</h3>
+<div class="card"><ul>
+<li>Core Committee Member for Rakuten Technology Conference for over three years.</li><li>Core Committee Member for Rakathon, leading planning and successful execution.</li><li>Mentor for engineers in AI, Cloud, Platform Engineering and Engineering Leadership.</li><li>Regular speaker on AI, Engineering Management and Enterprise Architecture.</li><li>Active contributor to engineering capability development, knowledge sharing and technical communities.</li>
+</ul></div></section>
+
+<div class="footer"><strong>Surajit Khan</strong><br>Engineering Manager • AI Transformation Leader • Enterprise Platform Architect<br><span class="small" id="gen-date"></span></div>
+</div></div>
+
+<script>
+(function(){
+const LOGOS={"rakuten": "data:image/svg+xml;base64,PHN2ZyB2ZXJzaW9uPSIxLjIiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgdmlld0JveD0iMCAwIDE0OTQgMTU5MCIgd2lkdGg9IjE0OTQiIGhlaWdodD0iMTU5MCI+Cgk8dGl0bGU+cmFrdXRlbi1zbGFzaC1zdmc8L3RpdGxlPgoJPHN0eWxlPgoJCS5zMCB7IGZpbGw6ICNiZjE4MTggfSAKCTwvc3R5bGU+Cgk8ZyBpZD0iTGF5ZXIiPgoJCTxnIGlkPSJMYXllciI+CgkJCTxwYXRoIGlkPSJMYXllciIgY2xhc3M9InMwIiBkPSJtMjEzLjIgMTU4OS45bC0yMTMtMTc4LjdoMTQ5My43eiIvPgoJCQk8cGF0aCBpZD0iTGF5ZXIiIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xhc3M9InMwIiBkPSJtMjEzLjIgMTI3Ny4ydi0xMjc2LjdoNDAwLjhjMjQyLjkgMCA0NDAuNCAxOTcuMyA0NDAuNCA0NDAuMSAwIDE0Ny45LTczLjUgMjc4LjUtMTg1LjQgMzU4LjhsMzU5IDQ3Ny44aC0zMDMuNmwtMjk3LTM5NmgtMTcxLjZ2Mzk2em0yNDIuNi02MzguNmgxNTguM2MxMDguOSAwIDE5OC04OC41IDE5OC0xOTggMC0xMDkuMS04OS4xLTE5Ny43LTE5OC0xOTcuN2gtMTU4LjN6Ii8+CgkJPC9nPgoJPC9nPgo8L3N2Zz4=", "fireeye": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAABMoAAAS3CAMAAAAgkWYUAAAAAXNSR0IB2cksfwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAwBQTFRFAAAAzBsmzBsmzBsmzBsmzBsmzBsmzBsmzBsmzBsmzBsmzBsmzBsmzBsmzBsmzBsmzBsmzBsmzBsmzBsmzBsmzBsmzBsmzBsmzBsmzBsmzBsmzBsmzBsmzBsmzBsmzBsmzBsmzBsmzBsmzBsmzBsmzBsmzBsmzBsmzBsmzBsmzBsmzBsmzBsmzBsmzBsmzBsmzBsmzBsmzBsmzBsmzBsmzBsmzBsmzBsmzBsmzBsmzBsmzBsmzBsmzBsmzBsmzBsmzBsmzBsmzBsmzBsmzBsmzBsmzBsmzBsmzBsmzBsmzBsmzBsmzBsmzBsmzBsmzBsmzBsmzBsmzBsmzBsmzBsmzBsmzBsmzBsmzBsmzBsmzBsmzBsmzBsmzBsmzBsmzBsmzBsmzBsmzBsmzBsmzBsmzBsmzBsmzBsmzBsmzBsmzBsmzBsmzBsmzBsmzBsmzBsmzBsmzBsmzBsmzBsmzBsmzBsmzBsmzBsmzBsmzBsmzBsmzBsmzBsmzBsmzBsmzBsmzBsmzBsmzBsmzBsmzBsmzBsmzBsmzBsmzBsmzBsmzBsmzBsmzBsmzBsmzBsmzBsmzBsmzBsmzBsmzBsmzBsmzBsmzBsmzBsmzBsmzBsmzBsmzBsmzBsmzBsmzBsmzBsmzBsmzBsmzBsmzBsmzBsmzBsmzBsmzBsmzBsmzBsmzBsmzBsmzBsmzBsmzBsmzBsmzBsmzBsmzBsmzBsmzBsmzBsmzBsmzBsmzBsmzBsmzBsmzBsmzBsmzBsmzBsmzBsmzBsmzBsmzBsmzBsmzBsmzBsmzBsmzBsmzBsmzBsmzBsmzBsmzBsmzBsmzBsmzBsmzBsmzBsmzBsmzBsmzBsmzBsmzBsmzBsmzBsmzBsmzBsmzBsmzBsmzBsmzBsmzBsmzBsmzBsmzBsmzBsmzBsmzBsmzBsmzBsmzBsmzBsmzBsmzBsmzBsmzBsmzBsmzBsmzBsmzBsmzBsmzBsmzBsmzBsmzBsmzBsmzBsmzBsmzBsmzBsmzBsmzBsmzBsmzBsm7schXwAAAQB0Uk5TAAsRGB4kKzE3PT44My4oIx0TDQgbQFNld4icrr7HzdPZ4Obs8v/v5M7BuK2i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", "foradian": "data:image/jpeg;base64,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"};
+
+const CAREER={
+  careerStart:'2011-06-27',
+  companies:[
+    {id:'foradian',name:'Foradian Technologies Pvt. Ltd.',logo:LOGOS.foradian,start:'2011-06-27',end:'2016-05-29',location:'Bangalore, India',role:'Team Lead / Senior Software Engineer',tag:'EdTech',tagBg:'#FFF5E8',tagColor:'#E67E22',
+     summary:"Started my leadership journey while building one of India's most widely adopted School ERP platforms, gaining extensive experience in product engineering, customer engagement, delivery management and technical mentoring.",
+     bullets:['Led engineering efforts for the Fedena School ERP platform serving educational institutions globally.','Managed feature planning, development execution and customer delivery.','Mentored junior engineers while establishing coding standards and engineering best practices.','Worked directly with customers to translate business requirements into scalable software solutions.','Collaborated across engineering, QA and support teams ensuring successful product releases.','Contributed significantly to engineering process improvements and product innovation.'],
+     tech:'Ruby on Rails • Ruby • MySQL • JavaScript • HTML • CSS • Linux'},
+    {id:'fireeye',name:'FireEye, Inc.',displayName:'Trellix',subtitle:'Formerly FireEye Cybersecurity Pvt. Ltd.',logo:LOGOS.fireeye,start:'2016-05-30',end:'2018-06-20',location:'Bangalore, India',role:'Senior Programmer',tag:'Cybersecurity',tagBg:'#EEF6FF',tagColor:'#0066CC',
+     summary:'Contributed to enterprise cybersecurity products focused on large-scale threat intelligence, security automation and high-performance backend services.',
+     bullets:['Developed scalable enterprise cybersecurity applications supporting mission-critical environments.','Partnered with globally distributed engineering teams to deliver secure, highly available software.','Improved operational efficiency through automation and engineering best practices.','Designed highly maintainable backend components emphasizing reliability and performance.','Collaborated closely with Product Management, QA and Security teams throughout the SDLC.','Strengthened engineering quality through code reviews, technical mentoring and knowledge sharing.'],
+     tech:'Java • Spring • REST APIs • Linux • MySQL • Automation • Enterprise Security'},
+    {id:'rakuten',name:'Rakuten Group',logo:LOGOS.rakuten,start:'2018-06-21',end:null,location:'Bangalore, India',role:'Engineering Manager',tag:null,
+     summary:'Progressed through six consecutive promotions from Senior Engineer-I to Engineering Manager, demonstrating consistent leadership growth, technical excellence, strategic thinking, organizational impact and delivery of enterprise-scale business platforms.'}
+  ],
+  promotions:[
+    {date:'2018-06-21',label:'Senior<br>Engineer-I',left:'3%'},
+    {date:'2019-06-01',label:'Senior<br>Engineer-II',left:'20%'},
+    {date:'2020-01-01',label:'Technical<br>Lead',left:'40%'},
+    {date:'2023-04-01',label:'Senior<br>Team Lead',left:'60%'},
+    {date:'2023-06-01',label:'Associate<br>Engineering Manager',left:'80%',em:true},
+    {date:'2026-01-01',label:'Engineering<br>Manager',left:'100%',last:true,current:true}
+  ]
+};
+
+const MONTHS=['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+const parse=d=>{const [y,m,day]=d.split('-').map(Number);return new Date(y,m-1,day);};
+const today=()=>new Date();
+const fmtShort=d=>`${MONTHS[d.getMonth()]} '${String(d.getFullYear()).slice(2)}`;
+const fmtLong=d=>`${MONTHS[d.getMonth()]} ${d.getFullYear()}`;
+const fmtRange=(s,e)=>`${fmtLong(parse(s))} – ${e?fmtLong(parse(e)):'Present'}`;
+
+function yearsBetween(start,end){
+  const s=parse(start),e=end?parse(end):today();
+  return Math.max(0,(e-s)/(365.25*86400000));
+}
+function yearsPlus(y){return Math.floor(y)+'+';}
+
+function logoImg(src,alt){return `<img class="co-logo" src="${src}" alt="${alt} logo">`;}
+
+function renderTimeline(){
+  const el=document.getElementById('timeline');
+  CAREER.promotions.forEach(p=>{
+    const d=parse(p.date);
+    const cls=['tl-node',p.em?'em':'',p.last?'last':''].filter(Boolean).join(' ');
+    const titleCls=p.current?'tl-title current':'tl-title';
+    el.insertAdjacentHTML('beforeend',`<div class="${cls}" style="left:${p.left}"><div class="tl-date">${fmtShort(d)}</div><div class="tl-dot"></div><div class="${titleCls}">${p.label}</div></div>`);
+  });
+}
+
+function renderRakuten(){
+  const c=CAREER.companies.find(x=>x.id==='rakuten');
+  const yrs=yearsPlus(yearsBetween(c.start,c.end));
+  document.getElementById('rakuten-summary').innerHTML=`<div class="co-row"><div class="co-header">${logoImg(c.logo,c.name)}<div><h4 style="margin:0">${c.name}</h4><div class="small">${fmtRange(c.start,c.end)} • ${c.location}</div></div></div><div class="co-badge" style="background:var(--rakuten-light);color:var(--rakuten)">${yrs} Years</div></div><div class="exp-inner"><p>${c.summary}</p></div>`;
+}
+
+function renderPrev(){
+  const box=document.getElementById('prev-companies');
+  ['fireeye','foradian'].forEach(id=>{
+    const c=CAREER.companies.find(x=>x.id===id);
+    const name=c.displayName||c.name;
+    const yrs=yearsPlus(yearsBetween(c.start,c.end));
+    box.insertAdjacentHTML('beforeend',`<div class="card" style="margin-bottom:30px"><div class="co-row"><div class="co-header">${logoImg(c.logo,name)}<div><h4 style="margin:0">${name}</h4><div class="small">${c.subtitle?c.subtitle+'<br>':''}${c.role} • ${fmtRange(c.start,c.end)} • ${c.location}</div></div></div><div style="display:flex;flex-direction:column;align-items:flex-end;gap:8px"><div class="co-badge" style="background:${c.tagBg};color:${c.tagColor}">${c.tag}</div><div class="co-badge" style="background:#f0f0f0;color:#333">${yrs} Years</div></div></div><div style="margin-top:22px"><p>${c.summary}</p></div><h4 style="margin-top:22px">${id==='foradian'?'Leadership Highlights':'Leadership & Technical Contributions'}</h4><ul>${c.bullets.map(b=>`<li>${b}</li>`).join('')}</ul><div style="margin-top:20px"><strong>Technologies</strong><div class="small" style="margin-top:8px">${c.tech}</div></div></div>`);
+  });
+}
+
+function updateMetrics(){
+  const total=yearsBetween(CAREER.careerStart,null);
+  const label=yearsPlus(total);
+  const text=`${label} years`;
+  document.getElementById('hero-exp').textContent=text;
+  document.getElementById('summary-exp').textContent=text;
+  document.getElementById('metric-exp').textContent=label;
+  document.getElementById('highlights-exp').textContent=label+' years';
+  document.getElementById('gen-date').textContent='Generated '+today().toLocaleDateString('en-GB',{day:'2-digit',month:'short',year:'numeric'});
+}
+
+renderTimeline();renderRakuten();renderPrev();updateMetrics();
+})();
+</script>
+</body>
+</html>
